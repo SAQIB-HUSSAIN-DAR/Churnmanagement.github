@@ -1,0 +1,80 @@
+1. # of dependents who are at Risk
+
+dependent = 
+    CALCULATE(COUNT('01 Churn-Dataset'[Dependents]), '01 Churn-Dataset'[Dependents] = "Yes",'01 Churn-Dataset'[Churn]="Yes").
+
+2.  % of partners at risk
+
+Partners_ = divide(CALCULATE(COUNT('01 Churn-Dataset'[Partner]),'01 Churn-Dataset'[Partner] ="Yes",'01 Churn-Dataset'[Churn]="Yes"),CALCULATE(COUNT('01 Churn-Dataset'[Partner]),'01 Churn-Dataset'[Churn]="Yes"),0)
+
+3. % of Senior citizens at risk
+
+Senior Citizes = divide( CALCULATE(COUNT('01 Churn-Dataset'[SeniorCitizen]),'01 Churn-Dataset'[SeniorCitizen] = 1,'01 Churn-Dataset'[Churn] ="Yes"),CALCULATE(COUNT('01 Churn-Dataset'[SeniorCitizen]),'01 Churn-Dataset'[Churn] ="Yes"),0).
+
+4. # of customers
+
+Total_Customers = COUNT('01 Churn-Dataset'[customerID])
+
+5. # of Admin tickets
+
+Admin_tickts = SUM('01 Churn-Dataset'[numAdminTickets])
+
+6. # Tech Tickets
+
+Tech_tickets = SUM('01 Churn-Dataset'[numTechTickets])
+
+7. Churn %
+
+Churn% = divide(CALCULATE(COUNT('01 Churn-Dataset'[Churn]),'01 Churn-Dataset'[Churn] ="Yes"),calculate  (COUNT('01 Churn-Dataset'[Churn]),ALLSELECTED('01 Churn-Dataset'[Churn]))).
+
+8. # customers subscribed to Devce service
+
+device_subs = CALCULATE(COUNT('01 Churn-Dataset'[DeviceProtection]),'01 Churn-Dataset'[DeviceProtection] = "Yes").
+
+9. # customers subscribed to movie service
+
+Movies_subs = CALCULATE(COUNT('01 Churn-Dataset'[StreamingMovies]),'01 Churn-Dataset'[StreamingMovies] = "Yes").
+
+10. # customers subscribed to Multiple lines service
+
+Multiple_lines_subs = CALCULATE(COUNT('01 Churn-Dataset'[MultipleLines]),'01 Churn-Dataset'[MultipleLines] = "Yes").
+
+11. # customers subscribed to  online security
+
+Online_security_subs = CALCULATE(COUNT('01 Churn-Dataset'[OnlineSecurity]),'01 Churn-Dataset'[OnlineSecurity] ="Yes").
+
+12. # customer at risk
+
+left_customers = CALCULATE(COUNT('01 Churn-Dataset'[Churn]),'01 Churn-Dataset'[Churn] = "Yes").
+
+13. # customers subscribed to Tv service
+Tv_subs = CALCULATE(COUNT('01 Churn-Dataset'[StreamingTV]),'01 Churn-Dataset'[StreamingTV] ="Yes").
+
+14. % of customers subscribed to TV service
+
+TV_% = divide(CALCULATE(COUNT('01 Churn-Dataset'[StreamingTV]),'01 Churn-Dataset'[StreamingTV]="Yes",'01 Churn-Dataset'[Churn]="Yes"),CALCULATE(COUNT('01 Churn-Dataset'[StreamingTV]),'01 Churn-Dataset'[Churn]="Yes"),0).
+
+15. % of customers subscribedd to phone service
+
+Phone_% = divide(CALCULATE(COUNT('01 Churn-Dataset'[PhoneService]),'01 Churn-Dataset'[PhoneService] ="Yes",'01 Churn-Dataset'[Churn] ="Yes"),CALCULATE(COUNT('01 Churn-Dataset'[PhoneService]),'01 Churn-Dataset'[Churn]= "Yes"),0).
+
+16.% of customers subscribed to device protection service
+
+device_% = divide(CALCULATE(COUNT('01 Churn-Dataset'[DeviceProtection]),'01 Churn-Dataset'[DeviceProtection]="Yes",'01 Churn-Dataset'[Churn]="yes"),CALCULATE(COUNT('01 Churn-Dataset'[DeviceProtection]),'01 Churn-Dataset'[Churn]="Yes"),0).
+
+17. # female count at risk
+
+Female_count = CALCULATE(COUNT('01 Churn-Dataset'[gender]),'01 Churn-Dataset'[gender] ="Female").
+
+18. # male count at risk
+
+Male_count = CALCULATE(COUNT('01 Churn-Dataset'[gender]),'01 Churn-Dataset'[gender] ="Male").
+
+19. % of customers subscribed to online security service
+
+Online_SEcurity_% = divide(CALCULATE( COUNT('01 Churn-Dataset'[OnlineSecurity]),'01 Churn-Dataset'[OnlineSecurity] ="Yes",'01 Churn-Dataset'[Churn] ="Yes"),CALCULATE(COUNT('01 Churn-Dataset'[OnlineSecurity]),'01 Churn-Dataset'[Churn]= "Yes")).
+
+20. % customers subscribed to TV service
+
+TV_% = divide(CALCULATE(COUNT('01 Churn-Dataset'[StreamingTV]),'01 Churn-Dataset'[StreamingTV]="Yes",'01 Churn-Dataset'[Churn]="Yes"),CALCULATE(COUNT('01 Churn-Dataset'[StreamingTV]),'01 Churn-Dataset'[Churn]="Yes"),0).
+
